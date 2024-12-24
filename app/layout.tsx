@@ -7,14 +7,26 @@ import Footer from "@/components/layout/footer";
 import StarAnimation from "@/components/star-animation";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import CoverLetter from "@/components/cover-letter";
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import { Outfit } from "next/font/google"
+
+const outfit = Outfit({
+  weight: ["300", "400", "500", "700"], 
+  subsets: ["latin"],
+  display: "swap",  
+  // display: "swap" 可以让页面先用系统字体渲染，
+  // 等自定义字体加载完后再切换，避免文字闪烁。
+});
+
+
+// import CoverLetter from "@/components/cover-letter";
+// import { Inter } from 'next/font/google'
+
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Larry Xue | Frontend Developer | JavaScript Enthusiast",
-  description: "Hi there, I'm Larry Xue, a web developer. Welcome to my corner of the internet.",
+  title: "Yuwei Ding | Data Analyst",
+  description: "Hi there, I'm Yuwei (Darcie) Ding, a data analyst. Welcome to my personal blog.",
 };
 
 export default function RootLayout({
@@ -23,13 +35,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body className={inter.className}>
+    <html lang="en" className="scroll-smooth"  suppressHydrationWarning={true}>
+      <body className={`${outfit.className} dot-grid`}>
         <NextUIProvider>
-          <NextThemesProvider attribute="class" defaultTheme="dark">
+          <NextThemesProvider attribute="class" defaultTheme="light">
             <Navbar />
             <main className="flex flex-col items-center md:p-24 px-2 py-24 max-w-[1000px] my-0 mx-auto light-green" style={{ minHeight: "calc(100vh - 6rem)" }}>
-              <CoverLetter />
+
               {children}
             </main>
             <Footer />

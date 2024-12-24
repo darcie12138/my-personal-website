@@ -1,81 +1,153 @@
-'use client'
+'use client';
 
 import { Card, CardBody, CardFooter, CardHeader, Divider, Image, Link } from "@nextui-org/react";
 import NextImage from "next/image";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { Chip } from "@nextui-org/chip";
 import SideMenu from "./components/side-menu";
+import Education from "@/components/Education";
+import { tableauEmbedCode } from "@/components/tableauEmbed"; 
 import PreviewIframe from "@/components/preview-iframe";
 import useScreenSize from "@/hooks/useScreenSize";
 import { useWindow } from "@/hooks/useWindow";
+import { useTheme } from "next-themes";
+
+
 
 export default function Home() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
   const technologies: Record<string, string[]> = {
-    language: ["HTML", "Javascript", "TypeScript", "Rust", "Go",],
-    vue: ["Vue 2/3", "Vuex", "Vue Router", "Nuxt.js", "Vitepress"],
-    style: ["Tailwind", "DaisyUI", "SCSS", "CSS",],
-    react: ["React", "Nuxt.js", "Redux", "React-Query",],
-    build: ["Vite", "Webpack",],
-    graph: ["Three.js", "Echarts",],
-    backend: ["Node.js", "Nest.js", "Express.js", "Prisma", "TypeORM", "MySQL", "MongoDB", "Docker",],
-    tools: ["Insomnia", "Git",],
-    platform: ["Cloudflare", "Vercel",]
-  }
+    language: [
+      "Mandarin (Native)",
+      "English",
+    ],
+  
+    programming: [
+      "C",
+      "VBA",
+      "HTML",
+      "Markdown",
+      "LaTeX",
+    ],
+
+    others: [
+      "Excel",
+      "PowerPoint",
+      "Photoshop",
+      "Adobe Premiere Pro",
+      "COMSOL",
+      "AutoCAD",
+    ],
+
+    dataAnalytics: [
+      "Python",
+      "R",
+      "SQL",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "Scikit-Learn",
+      "XGBoost",
+      "Machine Learning",
+      "TensorFlow",
+      "PyTorch",
+      "Tableau",
+      "Power BI",
+      "Time Series Analysis",
+      "A/B Testing",
+    ],
+  
+    financial: [
+      "Derivative Pricing",
+      "Greeks Hedging",
+      "Monte Carlo Simulation",
+      "Black-Scholes Model",
+      "Risk Management",
+      "Markowitz", "CAPM",
+      "Fixed Income Securities",
+      "Quantitative Trading Strategies",
+    ],
+  
+    
+  };
 
   const chipTheme: ("default" | "primary" | "secondary" | "success" | "warning" | "danger")[] = ["primary", "secondary", "success", "warning", "danger", "default"]
   const chipVariants: ("solid" | "bordered" | "flat" | "faded" | "shadow")[] = ["solid", "bordered", "flat", "faded", "shadow"]
 
   const experienceList = [
     {
-      title: "Frontend Developer",
-      company: "eSurfing Cloud",
-      time: "January 2024 - Present",
-      desc: "Collaborated with product and project managers, designers, and fellow engineers to develop and deploy features within an agile (3 week) cadence"
+      title: "Part-Time Analyst Intern",
+      company: "NLVC",
+      time: "March 2024 - July 2024",
+      desc: ["Produced two in-depth research reports, \"ARK: MCN in Fund Management\" and \"Technological Revolution and Financial Capital,\" both receiving high praise from partners.",
+            "Authored 7 project recommendation briefs during research period, including basic project information and industry analysis; four of these recommendations were featured in weekly report presented to partners. "]
     },
     {
-      title: "Junior Frontend Developer",
-      company: "eSurfing Cloud",
-      time: "July 2022 - January 2024",
-      desc: "Build, style, and ship high-quality websites for a diverse array of clients using technologies using Javascript, TypeScript, Vue, Echarts, SCSS and more"
-    },
+      title: "Demand Generation Rep Intern",
+      company: "Amazon Web Services",
+      time: "June 2023 - January 2024",
+      desc: [
+        "Conducted data cleaning and pivot table analysis on customer data to derive knowledge of market demand shifts, presenting findings to senior management in a PowerPoint presentation to inform business decision-making. ",
+        "Utilized Python and the SARIMAX model to analyze two years of historical data, improving monthly MQL forecast accuracy by 50% and aiding the DGR team in strategizing marketing activities for optimal business opportunities."
+      ]
+          },
     {
-      title: "Freelancer Frontend Developer",
-      time: "August 2019 - June 2022",
-      desc: "Studied frontend development independently, focusing on Javascript, HTML, CSS, jQuery, Bootstrap, and Vue.js."
-    }
+      title: "Strategy Consulting Intern",
+      company: "KPMG",
+      time: "July 2022 - August 2022",
+      desc: [
+        "Analyzed user survey data leveraging Python, applying PCA and K-means clustering to identify patterns in consumption habits, contributing to a 10% improvement in client’s VIP program engagement. ",
+        "Scraped and analyzed ESG data of 5 luxury conglomerates using BeautifulSoup, identifying 20+ best practices, and integrated findings into a benchmarking report for strategic recommendations."
+      ]
+          }
   ]
 
   const sideProjects = [
     {
-      title: "AI Hub powered by Cloudflare Worker AI",
-      desc: "Developed a project using Nuxt.js and Cloudflare Worker AI, facilitating users to multiple Cloudflare Worker AI functionalities. Integrated dark/light mode and OAuth login with GitHub for enhanced user experience. Additionally, empowered users to deploy their private AI sites.",
-      preview: "https://ai.larryxue.dev/",
-      github: "https://github.com/larry-xue/nuxt-chat-cloudflare",
+      title: "Spotify Popularity Index Prediction",
+      desc: "Built a machine learning pipeline integrating data scraping, audio embeddings, and neural networks to predict Spotify popularity with a 10x accuracy improvement, while also uncovering lyrical trends via genre and sentiment analysis.",
+      preview: "https://docs.google.com/presentation/d/e/2PACX-1vRfICse7sySUUVkvQpmk8fowdBY8NtCJsQ92ZMcZp3zkdGRuzqFfmVQPO63qfBoTw/pub?start=false&loop=false&delayms=3000",
+      github: "https://github.com/darcie12138/Spotify-Popularity-Index-Prediction",
+      image: "/images/Spotify.png",
+      iframe: `
+        <iframe 
+          src="https://docs.google.com/presentation/d/e/2PACX-1vRfICse7sySUUVkvQpmk8fowdBY8NtCJsQ92ZMcZp3zkdGRuzqFfmVQPO63qfBoTw/embed?start=false&loop=false&delayms=3000"
+          frameborder="0"
+          width="600"
+          height="390"
+          allowfullscreen="true"
+          mozallowfullscreen="true"
+          webkitallowfullscreen="true"
+        ></iframe>
+      `
     },
     {
-      title: "Larry Xue Site",
-      desc: "Built a personal website using Next.js and Next UI.",
-      preview: "https://larryxue.dev/",
-      github: "https://github.com/larry-xue/larry-xue-site"
+      title: "Personal Website Building",
+      desc: "`my-personal-website` is my own corner of the internet, built with Next.js and Tailwind CSS. It highlights my background, projects, and interests in a clean, modern layout, and it's easily accessible via GitHub Pages. This project is a fun way for me to showcase my work, experiment with new web technologies, and invite others to learn a bit more about who I am and what I do.",
+      preview: "https://darcie12138.github.io/my-personal-website/",
+      github: "https://github.com/darcie12138/my-personal-website"
     },
     {
-      title: "Weather App",
-      desc: "A simple weather app using Open-Meteo API and React.",
-      preview: "https://weather-app-react-75h.pages.dev/",
-      github: "https://github.com/larry-xue/weather-app-react"
+      title: "Visualization of Global COVID-19 Vaccination",
+      desc: "Developed a data pipeline that analyzed global COVID-19 vaccination trends and GDP correlations using Python, culminating in an interactive Tableau dashboard for exploring daily, total, and full vaccination metrics across countries and continents.",
+      preview: "https://public.tableau.com/app/profile/yuwei.ding/viz/GlobalCOVID-19VaccinationAnalysis/WORLDCOVIDVACCINATION",
+      github: "https://github.com/darcie12138/Global-COVID-19-Vaccination-Analysis?tab=readme-ov-file",
+      image: "/images/covid_vaccination_dashboard.png"
     },
-    {
-      title: "Folder to JSON",
-      desc: "Folder to JSON is a web application utilizing the showDirectoryPicker API to enable users to select a folder on their local machine. It recursively retrieves subdirectories to generate a JSON tree structure representing the directory hierarchy.",
-      preview: "https://folder2json.larryxue.dev/",
-      github: "https://github.com/larry-xue/folder-to-json"
-    },
-    {
-      title: "Vite Vue2 Starter Template",
-      desc: "vite-vue2-starter is a template for quickly starting Vue.js 2 projects. Built on the Vite v5 build tool",
-      preview: "",
-      github: "https://github.com/larry-xue/vite-vue2-starter"
-    }
+    // {
+    //   title: "Personal Website",
+    //   desc: "Folder to JSON is a web application utilizing the showDirectoryPicker API to enable users to select a folder on their local machine. It recursively retrieves subdirectories to generate a JSON tree structure representing the directory hierarchy.",
+    //   preview: "https://folder2json.larryxue.dev/",
+    //   github: "https://github.com/larry-xue/folder-to-json"
+    // },
+    // {
+    //   title: "Vite Vue2 Starter Template",
+    //   desc: "vite-vue2-starter is a template for quickly starting Vue.js 2 projects. Built on the Vite v5 build tool",
+    //   preview: "",
+    //   github: "https://github.com/larry-xue/vite-vue2-starter"
+    // }
   ]
 
   const { isSmallScreen, showSideMenu } = useScreenSize();
@@ -84,90 +156,94 @@ export default function Home() {
   return (
     <>
       {showSideMenu && <SideMenu />}
-      <div className="mx-auto w-full text-center mt-16 md:flex justify-center gap-12">
-        <div className="avatar hover:scale-110 duration-300 flex justify-center items-center">
-          <Image className="rounded-tl-lg rounded-br-lg" width={200} height={200} src="/avatar.jpg" alt="avatar" as={NextImage} />
-        </div>
-        <div>
-          <h1
-            className="hover:text-shadow-3 m-0 font-heading font-black transition-all duration-300 text-primary text-4xl md:text-5xl mt-4">
-            Yujian(Larry) Xue</h1>
-          <div className="flex flex-col gap-4 italic text-lg md:text-left mt-4">
-            <p>Frontend Engineer 💻</p>
-            <p>Side Project Manager 🚀</p>
-            <p>Beginner UI/UX Designer 🤯</p>
+      <div style={{ backgroundColor: isDark ? "#000" : "#fff" }}></div>
+        <div className="mx-auto w-full text-center mt-16 md:flex justify-center gap-12">
+          <div className="avatar hover:scale-110 duration-300 flex justify-center items-center">
+            <Image className="rounded-tl-lg rounded-br-lg" width={200} height={200} src="/avatar.png" alt="avatar" as={NextImage} />
+          </div>
+          <div>
+            <h1
+              className="hover:text-shadow-3 m-0 font-heading font-black transition-all duration-300 text-primary text-4xl md:text-5xl mt-4">
+              Yuwei(Darcie) Ding</h1>
+            <div className="flex flex-col gap-2 text-lg md:text-left mt-4">
+              <p>Melton Fellow 🇺🇳</p>
+              <p>Data Analyst 💻</p>
+              {/* <p>Beginner UI/UX Designer 🤯</p> */}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="px-4 mt-2">
-        <h4 className="hover:text-shadow-3 m-0 font-heading text-lg font-black transition-all duration-300">A
-          bit about me</h4>
-        <p>Hey there! 👋 I'm Yujian (Larry), a results-driven Front-End Developer with over 2 years of fulltime work experience,
-          specializing in web application development. Currently employed at eSurfing Cloud, I'm passionate about crafting
-          engaging user experiences and leveraging cutting-edge technologies to bring ideas to life.</p>
-      </div>
-      <div className="px-4 mt-4 w-full">
-        <h4
-          className="hover:text-shadow-3 m-0 font-heading text-lg font-black tracking-[-0.1rem] transition-all duration-300">
-        </h4>
-        <Accordion variant="splitted" selectionMode="multiple" defaultExpandedKeys={["technologies and tools", "personal traits"]}>
-          <AccordionItem
-            title="Technologies and Tools"
-            key="technologies and tools"
-            aria-label="technologies and tools"
-          >
-            {Object.keys(technologies).map((key) => (
-              <div key={key} className="flex flex-wrap gap-2 mb-2">
-                {technologies[key].map((tech) => (
-                  <Chip
-                    key={tech}
-                    color={chipTheme[Math.floor(Math.random() * chipTheme.length)]}
-                    variant={chipVariants[Math.floor(Math.random() * chipVariants.length)]}
+        <div className="px-4 mt-2">
+          <h4 className="hover:text-shadow-3 m-0 font-heading text-lg font-black transition-all duration-300">A
+            bit about me</h4>
+          <p>Hey there! 👋 I'm Yuwei (Darcie), I am a graduate student at Columbia University, pursuing a Master's degree in Business Analytics. I received my Bachelor's degree in Chemical Engineering from Zhejiang University.
+          I am passionate about leveraging data-driven insights for strategic decision-making. As a Melton Fellow, I am dedicated to fostering global citizenship and driving meaningful change through collaborative projects. I am also interest in boxing and maintaining an active fitness lifestyle.</p>
+        </div>
+        <div className="px-4 mt-4 w-full">
+          <h4
+            className="hover:text-shadow-3 m-0 font-heading text-lg font-black tracking-[-0.1rem] transition-all duration-300">
+          </h4>
+
+          <div className="px-4 mt-4 w-full">
+            <h2 className="hover:text-shadow-3 m-0 font-heading text-2xl font-black mb-4 transition-all duration-300">
+              Skills
+            </h2>
+
+            <div className="grid grid-cols-3 gap-8">
+              {Object.keys(technologies).map((category) => (
+                <div key={category}>
+                  {/* 标题颜色改成 dark: 写法 */}
+                  <h3
+                    className="
+                      text-xl
+                      font-semibold
+                      capitalize
+                      mb-3
+                      transition-colors
+                      text-[#36487E]
+                      dark:text-[#F2C79A]
+                    "
                   >
-                    {tech}
-                  </Chip>
-                ))}
-              </div>
-            ))}
-          </AccordionItem>
-          <AccordionItem
-            title="Personal Traits"
-            key="personal traits"
-            aria-label="Personal Traits"
-          >
-            <p className="mb-2 text-sm text-gray-500 dark:text-gray-400 leading-loose">
-              🦉<span className="font-bold">Remote Work Enthusiast</span>: Actively seeking remote development opportunities to embrace flexibility and expand my horizons.
-            </p>
+                    {category}
+                  </h3>
 
-            <p className="mb-2 text-sm text-gray-500 dark:text-gray-400 leading-loose">
-              🪰<span className="font-bold">Running Enthusiast</span>: Outside of coding, you can often find me enjoying a refreshing run.
-            </p>
-
-            <p className="mb-2 text-sm text-gray-500 dark:text-gray-400 leading-loose">
-              🦆<span className="font-bold">Work-Life Balance Advocate</span>: Valuing work-life balance, I prioritize maintaining harmony between professional and personal life.
-            </p>
-
-            <p className="mb-2 text-sm text-gray-500 dark:text-gray-400 leading-loose">
-              🐸<span className="font-bold">Technical Excellence Pursuer</span>: Detail-oriented and constantly striving for excellence in technical implementations, I stay updated with the latest advancements in the field.
-            </p>
-
-            <p className="mb-2 text-sm text-gray-500 dark:text-gray-400 leading-loose">
-              🐲<span className="font-bold">AI Technology Follower</span>: I'm particularly interested in AI technology, especially in how it can be utilized to enhance work efficiency. I enjoy experimenting with various AI tools and staying updated on the latest advancements in the field.
-            </p>
-          </AccordionItem>
-        </Accordion>
+                  <div className="flex flex-wrap gap-2">
+                    {technologies[category].map((tech) => (
+                      <Chip
+                        key={tech}
+                        variant="flat"
+                        /* 直接使用我们在 globals.css 里定义的类 */
+                        className="my-skill-chip"
+                      >
+                        {tech}
+                      </Chip>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
       </div>
 
       <div className="my-12 px-4 w-full" id="experience">
         <h1
-          className="hover:text-shadow-3 m-0 font-heading text-[clamp(3rem,_10vw,_4.5rem)] font-black tracking-[-0.2rem] transition-all duration-300">
+          className="hover:text-shadow-3 m-0 font-heading text-[clamp(2.5rem,_6vw,_3.5rem)] font-black tracking-[-0.2rem] transition-all duration-300">
           Experience</h1>
 
-        <Accordion selectionMode="multiple" defaultExpandedKeys={experienceList.map((exp) => exp.title)}>
+        <Accordion selectionMode="multiple" defaultExpandedKeys={[]}>
           {experienceList.map((exp, idx) => (
             <AccordionItem
-              title={exp.title}
-              subtitle={exp.company + exp.time}
+              title={
+                <span className="font-bold">
+                  {exp.title}
+                  <br />
+                  {exp.company}
+                </span>
+              }
+              subtitle={
+                <span>
+                  {exp.time}
+                </span>
+              }
               key={exp.title}
               aria-label={exp.title}
             >
@@ -179,20 +255,15 @@ export default function Home() {
         </Accordion>
       </div >
 
-      <div className="mb-12 px-4 w-full" id="education">
-        <h1
-          className="hover:text-shadow-3 m-0 font-heading text-[clamp(3rem,_10vw,_4.5rem)] font-black tracking-[-0.2rem] transition-all duration-300">
-          Education</h1>
-        <div>
-          <h3 className="text-2xl font-bold">Bachelor of Science</h3>
-          <p className="text-lg">Fuzhou University Computer Science (2018 - 2022)</p>
-        </div>
-      </div>
+
+      <Education />
+
+
 
       <div className="mb-12 px-4" id="side-projects" >
         <h1
-          className="hover:text-shadow-3 m-0 font-heading text-[clamp(3rem,_10vw,_4.5rem)] font-black tracking-[-0.2rem] transition-all duration-300">
-          Side Projects</h1>
+          className="hover:text-shadow-3 m-0 font-heading text-[clamp(2.5rem,_6vw,_3.5rem)] font-black tracking-[-0.2rem] transition-all duration-300">
+          Projects</h1>
         <div className="flex flex-wrap gap-4">
           {
             sideProjects.map((project) => (
@@ -202,10 +273,44 @@ export default function Home() {
                 </CardHeader>
                 <Divider />
                 <CardBody>
-                  {project.preview && _window?.self === _window?.top && !isSmallScreen ? <div className="flex gap-2 h-[400px]">
-                    <p className="text-sm w-1/3 text-gray-500 dark:text-gray-400 leading-loose">{project.desc}</p>
-                    <PreviewIframe url={project.preview} />
-                  </div> : <p className="text-sm text-gray-500 dark:text-gray-400 leading-loose">{project.desc}</p>}
+                  {
+                    // 先判断 project.tableauHtml
+                    project.image ? (
+                      <div className="flex gap-2 h-[400px]">
+                        <p className="text-sm w-1/3 text-gray-500 dark:text-gray-400 leading-loose">
+                          {project.desc}
+                        </p>
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-2/3 object-contain rounded"
+                        />
+                      </div>
+                    ) : project.iframe ? (
+                      <div className="flex gap-2 h-[400px]">
+                        <p className="text-sm w-1/3 text-gray-500 dark:text-gray-400 leading-loose">
+                          {project.desc}
+                        </p>
+                        <div
+                          className="w-2/3"
+                          dangerouslySetInnerHTML={{ __html: project.iframe }}
+                        />
+                      </div>
+                    ) : project.preview ? (
+                      <div className="flex gap-2 h-[400px]">
+                        <p className="text-sm w-1/3 text-gray-500 dark:text-gray-400 leading-loose">
+                          {project.desc}
+                        </p>
+                        <PreviewIframe url={project.preview} />
+                      </div>
+                    ) : (
+                      // 如果啥都没有，就只显示描述文字
+                      <p className="text-sm text-gray-500 dark:text-gray-400 leading-loose">
+                        {project.desc}
+                      </p>
+                    )
+                  }
+
                 </CardBody>
                 <Divider />
                 <CardFooter className="flex gap-3">
