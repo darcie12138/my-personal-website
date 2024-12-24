@@ -1,7 +1,25 @@
-# Welcome to Larry Xue's Corner
+# Darcie's Personal Website
 
-I am a web developer and JavaScript enthusiast. I love learning new things and creating new things. Welcome to my corner of the internet.
+This is my personal website, which is based on the [larry-xue-site](https://github.com/larry-xue/larry-xue-site) template and deployed on GitHub Pages. Feel free to visit the site and learn more about me!
 
-Feel free to check out my [GitHub](https://github.com/larry-xue) and [LinkedIn](https://www.linkedin.com/in/larry-xue-588386212/) profiles
+## Demo
 
-# I am currently looking for a new position. If you have any questions or want to reach out, feel free to [contact me](https://larryxue.dev/contact)
+[**Check out the site here**](https://your-username.github.io/your-repo-name/)
+
+## Features
+
+- **Next.js + React** architecture for a modern and efficient development experience
+- **Tailwind CSS** for quick UI styling
+- **NextUI** component library for clean and stylish components
+- **Dark mode support** (via NextThemes or custom configuration)
+- **Pages for About, Experience, Skills, and Projects** to showcase personal info
+- **Deployed on GitHub Pages** for easy hosting
+
+## Acknowledgment
+
+- Original template: [larry-xue-site](https://github.com/larry-xue/larry-xue-site). Many thanks to the author for providing a great starting point for building a personal site.
+
+## License
+
+- If the original repo has a specific open-source license, please retain it  
+- You may add your own license if desired
