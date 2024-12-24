@@ -4,7 +4,7 @@ This is my personal website, which is based on the [larry-xue-site](https://gith
 
 ## Demo
 
-[**Check out the site here**](https://your-username.github.io/your-repo-name/)
+[**Check out the site here**](https://darcie-ding.com/)
 
 ## Features
 
@@ -13,7 +13,7 @@ This is my personal website, which is based on the [larry-xue-site](https://gith
 - **NextUI** component library for clean and stylish components
 - **Dark mode support** (via NextThemes or custom configuration)
 - **Pages for About, Experience, Skills, and Projects** to showcase personal info
-- **Deployed on GitHub Pages** for easy hosting
+- **Deployed on Vercel** for easy hosting
 
 ## Acknowledgment
 
