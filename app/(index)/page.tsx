@@ -6,7 +6,7 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 import { Chip } from "@nextui-org/chip";
 import SideMenu from "./components/side-menu";
 import Education from "@/components/Education";
-import { tableauEmbedCode } from "@/components/tableauEmbed"; 
+
 import PreviewIframe from "@/components/preview-iframe";
 import useScreenSize from "@/hooks/useScreenSize";
 import { useWindow } from "@/hooks/useWindow";
