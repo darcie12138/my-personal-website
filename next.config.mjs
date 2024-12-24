@@ -11,7 +11,7 @@ const nextConfig = {
 
   // 如果你想把站点部署到子路径（例如 /my-personal-website/）可加上：
   // basePath: "/my-personal-website",
-  // trailingSlash: true,
+  trailingSlash: true,
 };
 
 export default withMDX(nextConfig);
