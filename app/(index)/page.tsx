@@ -107,7 +107,7 @@ export default function Home() {
   const sideProjects = [
     {
       title: "Spotify Popularity Index Prediction",
-      desc: "Built a machine learning pipeline integrating data scraping, audio embeddings, and neural networks to predict Spotify popularity with a 10x accuracy improvement, while also uncovering lyrical trends via genre and sentiment analysis.",
+      desc: "This project investigates the factors influencing Spotify’s Popularity Index, aiming to uncover the underlying drivers of a track's success. The study employs statistical models such as regressions, random forests, and neural networks to predict popularity metrics based on audio features, streaming volumes, and genres. Advanced modeling, including the use of YAMNet embeddings.",
       preview: "https://docs.google.com/presentation/d/e/2PACX-1vRfICse7sySUUVkvQpmk8fowdBY8NtCJsQ92ZMcZp3zkdGRuzqFfmVQPO63qfBoTw/pub?start=false&loop=false&delayms=3000",
       github: "https://github.com/darcie12138/Spotify-Popularity-Index-Prediction",
       image: "/images/Spotify.png",
