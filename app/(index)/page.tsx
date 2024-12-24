@@ -126,7 +126,7 @@ export default function Home() {
     {
       title: "Personal Website Building",
       desc: "`my-personal-website` is my own corner of the internet, built with Next.js and Tailwind CSS. It highlights my background, projects, and interests in a clean, modern layout, and it's easily accessible via GitHub Pages. This project is a fun way for me to showcase my work, experiment with new web technologies, and invite others to learn a bit more about who I am and what I do.",
-      preview: "https://darcie12138.github.io/my-personal-website/",
+      preview: "https://darcie-ding.com",
       github: "https://github.com/darcie12138/my-personal-website"
     },
     {
