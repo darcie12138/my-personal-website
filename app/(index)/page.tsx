@@ -24,6 +24,8 @@ export default function Home() {
     ],
   
     programming: [
+      "Python",
+      "SQL",
       "C",
       "VBA",
       "HTML",
