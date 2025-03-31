@@ -61,15 +61,12 @@ export default function Home() {
       "A/B Testing",
     ],
   
-    financial: [
-      "Derivative Pricing",
-      "Greeks Hedging",
-      "Monte Carlo Simulation",
-      "Black-Scholes Model",
-      "Risk Management",
-      "Markowitz", "CAPM",
-      "Fixed Income Securities",
-      "Quantitative Trading Strategies",
+    cloudServices: [
+      "AWS S3",
+      "AWS EC2",
+      "AWS Lambda Function",
+      "AWS DynamoDB",
+      "Google Cloud Platform",
     ],
   
     
@@ -107,6 +104,14 @@ export default function Home() {
   ]
 
   const sideProjects = [
+    {
+      title: "Global Fact Checking Flatform",
+      desc: "Misinformation’s effects, particularly around climate issues, is a complex and evolving phenomenon that requires a collective approach to address effectively. Limited expert resources, biased ratings from crowdsourced veracity judgments, and low public trust without engagement in the fact-checking process are key challenges this project aims to address.\n" +
+          "\n" +
+          "We’re building MyFactWiki, a platform that leverages a transparent AI model combined with crowdsourced similarity assessments to scale expert veracity ratings and collaboratively verify climate news and information. Visit the Our Model page to explore the project’s data sources and modeling process. This project is a work in progress. Check out the Community page to contribute or reach out to us with any questions or thoughts you’d like to share.",
+      preview: "https://fact-check-website.vercel.app/ourmodel",
+      github: "https://github.com/Vinayak-Kannan/FactChecker-V3"
+    },
     {
       title: "Spotify Popularity Index Prediction",
       desc: "This project investigates the factors influencing Spotify’s Popularity Index, aiming to uncover the underlying drivers of a track's success. The study employs statistical models such as regressions, random forests, and neural networks to predict popularity metrics based on audio features, streaming volumes, and genres. Advanced modeling, including the use of YAMNet embeddings.",

@@ -6,49 +6,34 @@ export default function AboutPage() {
 
   const photos = [
     {
-      src: "/images/melton1.png",
-      alt: "Me with Melton #1",
-      caption: "Melton Fellows at Chile #1",
+      src: "/images/tt1.png",
+      alt: "My cat",
+      caption: "tt",
     },
     {
-      src: "/images/melton2.png",
-      alt: "Me with Melton #2",
-      caption: "Melton Fellows at Chile #2",
+      src: "/images/tt2.png",
+      alt: "My cat",
+      caption: "tt",
     },
     {
-      src: "/images/melton3.png",
-      alt: "Me with Melton #3",
-      caption: "Melton Fellows Gathering",
+      src: "/images/tt3.png",
+      alt: "My cat",
+      caption: "tt",
     },
     {
-      src: "/images/melton4.png",
-      alt: "Me with Melton #4",
-      caption: "Memorable moment with Melton Fellows",
+      src: "/images/tt4.png",
+      alt: "My cat",
+      caption: "tt",
+    },
+    {
+      src: "/images/tt5.png",
+      alt: "My cat Litten",
+      caption: "tt",
     },
     {
       src: "/images/melton5.png",
       alt: "Me with Melton #5",
       caption: "Group photo of Melton Fellows",
-    },
-    {
-      src: "/images/teaching.png",
-      alt: "Support Education #1",
-      caption: "Support Education at Lishui #1",
-    },
-    {
-      src: "/images/teaching2.png",
-      alt: "Support Education #2",
-      caption: "Support Education at Lishui #2",
-    },
-    {
-      src: "/images/sea.png",
-      alt: "At sea",
-      caption: "Me at Seaside",
-    },
-    {
-      src: "/images/debating.png",
-      alt: "Debating",
-      caption: "Debating Competition",
     },
   ];
 
@@ -100,6 +85,19 @@ export default function AboutPage() {
           boxing
         </span>{" "}
         and maintaining an active fitness lifestyle.
+      </p>
+
+      {/* 段落 4 */}
+      <p className="mb-4">
+        I adopted a cat in {" "}
+        <span className="my-code-block">
+          New York
+        </span>
+        . Her name is Litten (we usually call her tt). She is a {" "}
+        <span className="my-code-block">
+          domestic shorthair
+        </span>{" "}
+        and she came to my home on Jan 2025, when she was 2 months old. I love her soooo much!!
       </p>
 
       <div className="mt-8">
