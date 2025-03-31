@@ -31,8 +31,8 @@ export default function AboutPage() {
       caption: "tt",
     },
     {
-      src: "/images/melton5.png",
-      alt: "Me with Melton #5",
+      src: "/images/melton2.png",
+      alt: "Me with Melton",
       caption: "Group photo of Melton Fellows",
     },
   ];
@@ -93,15 +93,19 @@ export default function AboutPage() {
         <span className="my-code-block">
           New York
         </span>
-        . Her name is Litten (we usually call her tt). She is a {" "}
+        . Her name is
         <span className="my-code-block">
+        Litten
+        </span>
+        (we usually call her tt). She is a {" "}
+          <span className="my-code-block">
           domestic shorthair
         </span>{" "}
-        and she came to my home on Jan 2025, when she was 2 months old. I love her soooo much!!
+          and she came to my home on Jan 2025, when she was 2 months old. I love her soooo much!!
       </p>
 
       <div className="mt-8">
-        <h2 className="text-2xl font-bold mb-4">Photo Gallery</h2>
+      <h2 className="text-2xl font-bold mb-4">Photo Gallery</h2>
         
         <div className="grid grid-cols-3 gap-6">
           {photos.map((photo) => (
