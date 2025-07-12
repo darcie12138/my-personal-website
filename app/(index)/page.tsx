@@ -77,6 +77,13 @@ export default function Home() {
 
   const experienceList = [
     {
+      title: "Data Analytics Intern",
+      company: "Barclays",
+      time: "June 2025 - Present",
+      desc: ["Led a customer segmentation initiative using SAS and SQL to analyze a 13 million-customer dataset, uncovering new opportunities within the existing base and projected to yield a 15% revenue uplift.",
+            "Leveraged SQL to query and transform millions of records in AWS S3, powering campaign evaluations and predictive models that boosted targeting accuracy by 15% and uncovered key audience insights."]
+    },
+    {
       title: "Part-Time Analyst Intern",
       company: "NLVC",
       time: "March 2024 - July 2024",
@@ -174,7 +181,7 @@ export default function Home() {
               Yuwei(Darcie) Ding</h1>
             <div className="flex flex-col gap-2 text-lg md:text-left mt-4">
               <p>Melton Fellow 🇺🇳</p>
-              <p>Data Analyst 💻</p>
+              <p>Data Scientist 💻</p>
               {/* <p>Beginner UI/UX Designer 🤯</p> */}
             </div>
           </div>
